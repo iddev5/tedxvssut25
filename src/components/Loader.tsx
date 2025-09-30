@@ -1,5 +1,5 @@
 'use client';
-import { motion, useAnimation } from 'framer-motion';
+import { motion, useAnimation, Variants } from 'framer-motion';
 import { useEffect } from 'react';
 
 const letters = ['T', 'E', 'D', 'x', 'V', 'S', 'S', 'U', 'T'];
@@ -18,7 +18,7 @@ const Loader = () => {
     runSequence();
   }, [controls]);
 
-  const letterVariants = {
+  const letterVariants: Variants = {
     hidden: { y: '100%', opacity: 1 },
     visible: (i: number) => ({
       y: 0,
@@ -32,7 +32,7 @@ const Loader = () => {
     down: { opacity: 0, transition: { duration: 0.75 } },
   };
 
-  const blockVariants = {
+  const blockVariants: Variants = {
     hidden: { y: 0 },
     down: (i: number) => ({
       y: '100%',
