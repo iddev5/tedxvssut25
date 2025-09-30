@@ -1,5 +1,5 @@
 import CrewSection from "@/components/CrewSection";
-
+import Loader from "@/components/Loader";
 import Hero from "@/components/Hero";
 import SpeakerHome from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
@@ -9,6 +9,7 @@ import InfoSection from "@/components/InfoSection";
 export default function Index() {
   return (<>
     <Hero />
+    {/* <Loader /> */}
     <InfoSection />
 
     <SpeakerHome/>
