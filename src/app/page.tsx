@@ -1,7 +1,7 @@
 import { CrewCard } from "@/components/CrewCard";
 import { SpeakerHome } from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
-
+import SurveyForm from "@/components/SurveyForm";
 export default function Index() {
   return (<>
     <h1>TEDxVSSUT</h1>
@@ -23,5 +23,6 @@ export default function Index() {
 
     <h1>FAQ</h1>
     <p>faqs</p>
+    <SurveyForm />
   </>)
 }
