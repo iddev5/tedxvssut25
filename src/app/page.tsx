@@ -2,6 +2,7 @@ import { CrewCard } from "@/components/CrewCard";
 import { SpeakerHome } from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
 import PastEvents from "./past-events/page";
+import SponsorCarousel from "../../../PastSponsors";
 
 export default function Index() {
   return (<>
@@ -27,5 +28,6 @@ export default function Index() {
     <div className="w-full">
       <PastEvents />
     </div>
+    <SponsorCarousel />
   </>)
 }

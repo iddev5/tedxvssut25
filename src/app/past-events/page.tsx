@@ -5,17 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 export default function PastEvents() {
-  const [selectedYear, setSelectedYear] = useState<'2019' | '2020' | '2021'>('2019');
+  const [selectedYear, setSelectedYear] = useState<'2021' | '2020' | '2019'>('2021');
 
   // Sample event data with placeholder images
-  const events: Record<'2019' | '2020' | '2021', Array<{ id: number; title: string; img: string }>> = {
-    '2019': [
-      { id: 1, title: 'Opening Ceremony 2019', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop' },
-      { id: 2, title: 'Keynote Speaker 2019', img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop' },
-      { id: 3, title: 'Panel Discussion 2019', img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop' },
-      { id: 4, title: 'Networking Session 2019', img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop' },
-      { id: 5, title: 'Workshop 2019', img: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop' },
-      { id: 6, title: 'Closing Event 2019', img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop' },
+  const events: Record<'2021' | '2020' | '2019', Array<{ id: number; title: string; img: string }>> = {
+    '2021': [
+      { id: 1, title: 'Opening Ceremony 2021', img: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800&h=600&fit=crop' },
+      { id: 2, title: 'Keynote Speaker 2021', img: 'https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=800&h=600&fit=crop' },
+      { id: 3, title: 'Panel Discussion 2021', img: 'https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&h=600&fit=crop' },
+      { id: 4, title: 'Networking Session 2021', img: 'https://images.unsplash.com/photo-1511578314322-379afb476865?w=800&h=600&fit=crop' },
+      { id: 5, title: 'Workshop 2021', img: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&h=600&fit=crop' },
+      { id: 6, title: 'Closing Event 2021', img: 'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?w=800&h=600&fit=crop' },
     ],
     '2020': [
       { id: 7, title: 'Virtual Opening 2020', img: 'https://images.unsplash.com/photo-1591115765373-5207764f72e7?w=800&h=600&fit=crop' },
@@ -25,17 +25,17 @@ export default function PastEvents() {
       { id: 11, title: 'Virtual Networking 2020', img: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop' },
       { id: 12, title: 'Online Workshop 2020', img: 'https://images.unsplash.com/photo-1600298881974-6be191ceeda1?w=800&h=600&fit=crop' },
     ],
-    '2021': [
-      { id: 13, title: 'Hybrid Event 2021', img: 'https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=600&fit=crop' },
-      { id: 14, title: 'Innovation Talk 2021', img: 'https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=800&h=600&fit=crop' },
-      { id: 15, title: 'Tech Showcase 2021', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop' },
-      { id: 16, title: 'Speaker Session 2021', img: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop' },
-      { id: 17, title: 'Community Meetup 2021', img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop' },
-      { id: 18, title: 'Grand Finale 2021', img: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop' },
+    '2019': [
+      { id: 13, title: 'Hybrid Event 2019', img: 'https://images.unsplash.com/photo-1560439514-4e9645039924?w=800&h=600&fit=crop' },
+      { id: 14, title: 'Innovation Talk 2019', img: 'https://images.unsplash.com/photo-1591453089816-0fbb971b454c?w=800&h=600&fit=crop' },
+      { id: 15, title: 'Tech Showcase 2019', img: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&h=600&fit=crop' },
+      { id: 16, title: 'Speaker Session 2019', img: 'https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=800&h=600&fit=crop' },
+      { id: 17, title: 'Community Meetup 2019', img: 'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=800&h=600&fit=crop' },
+      { id: 18, title: 'Grand Finale 2019', img: 'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=800&h=600&fit=crop' },
     ],
   };
 
-  const years: Array<'2019' | '2020' | '2021'> = ['2019', '2020', '2021'];
+  const years: Array<'2021' | '2020' | '2019'> = ['2021', '2020', '2019'];
 
   return (
     <div className="min-h-screen bg-black py-16 px-14">
@@ -48,7 +48,7 @@ export default function PastEvents() {
           className="text-center mb-12"
         >
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            Past <span className="text-red-500">Events</span>
+            PAST <span className="text-red-500">EVENTS</span>
           </h1>
           <p className="text-gray-300 text-lg">Relive the moments that inspired us</p>
         </motion.div>
@@ -80,7 +80,7 @@ export default function PastEvents() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.25 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {events[selectedYear].map((event, index) => (
