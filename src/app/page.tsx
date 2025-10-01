@@ -23,6 +23,5 @@ export default function Index() {
 
     <h1>FAQ</h1>
     <p>faqs</p>
-    <SurveyForm />
   </>)
 }
