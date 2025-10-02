@@ -1,26 +1,30 @@
 import { CrewCard } from "@/components/CrewCard";
-import { SpeakerHome } from "@/components/SpeakerHome";
+import Hero from "@/components/Hero";
+import SpeakerHome from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
+import PastEvents from "./past-events/page";
+
 export default function Index() {
-  return (<>
-    <h1>TEDxVSSUT</h1>
-    <h1>What is ted x</h1>
-    <p>reply</p>
+  return (
+    <>
+      <Hero />
+      <h1>TEDxVSSUT</h1>
+      <h1>What is ted x</h1>
+      <p>reply</p>
 
-    {Array(5).map(i =>
       <SpeakerHome />
-    )}
 
-    <h1>Venue</h1>
-    <p>content</p>
+      <h1>Venue</h1>
+      <p>content</p>
 
-    {Array(2).map(i =>
-      <CrewCard />
-    )}
+      {Array(2).map((i) => (
+        <CrewCard />
+      ))}
 
-    <SponsorUs />
+      <SponsorUs />
 
-    <h1>FAQ</h1>
-    <p>faqs</p>
-  </>)
+      <h1>FAQ</h1>
+      <p>faqs</p>
+    </>
+  );
 }
