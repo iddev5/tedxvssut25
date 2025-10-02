@@ -1,6 +1,49 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+.custom-scrollbar::-webkit-scrollbar {
+  height: 20px; 
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 0 100px; 
+  border:1px solid white;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+@media (min-width: 768px) {
+  .custom-scrollbar::-webkit-scrollbar-track {
+    margin: 0 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .custom-scrollbar::-webkit-scrollbar-track {
+    margin: 0 300px;
+  }
+}
+@media (min-width: 1200px) {
+  .custom-scrollbar::-webkit-scrollbar-track {
+    margin: 0 300px;
+  }
+}
+@media (min-width: 1400px) {
+  .custom-scrollbar::-webkit-scrollbar-track {
+    margin: 0 500px;
+  }
+}
+
+
 @font-face {
     font-family: 'Helvetica Neue';
     src: url('/fonts/HelveticaNeueLight.ttf') format('truetype');

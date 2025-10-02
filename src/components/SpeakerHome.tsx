@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { GrFormNext, GrFormPrevious } from 'react-icons/gr'
+import Link from 'next/link'
 
 
 // Mock Data
@@ -73,7 +74,6 @@ const SpeakersSection = () => {
 
   return (
     <section className="bg-black text-white py-8 md:py-10 font-sans overflow-hidden lg:h-screen relative">
-
       <div className="container mx-auto text-center px-4 relative">
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl md:text-5xl font-light uppercase tracking-widest">
@@ -220,16 +220,6 @@ const SpeakersSection = () => {
                   </div>
                 </motion.div>
               </div>
-              {/* <SpeakerCard
-                key={speakers[currentIndex].id}
-                name={speakers[currentIndex].name}
-                title={speakers[currentIndex].title}
-                imageUrl={speakers[currentIndex].imageUrl}
-                isActive={true}
-                handleHover={() => {}}
-                currentIndex={currentIndex}
-                pos={currentIndex}
-              /> */}
             </motion.div>
           </AnimatePresence>
         </div>
@@ -249,6 +239,13 @@ const SpeakersSection = () => {
             <GrFormNext className="text-2xl sm:text-3xl" />
           </button>
         </div>
+        <Link
+          href="/speakers"
+          className="inline-block px-6 py-2 mt-6 rounded-md bg-red-600 text-white font-semibold tracking-wide
+             hover:bg-red-700 hover:scale-105 hover:shadow-lg transition-all duration-300"
+        >
+          View All Speakers
+        </Link>
       </div>
     </section>
   )

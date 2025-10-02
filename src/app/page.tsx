@@ -1,4 +1,4 @@
-import { CrewCard } from "@/components/CrewCard";
+import { CrewCard } from "@/components/CrewCard"; // Kept your version
 import Hero from "@/components/Hero";
 import SpeakerHome from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
@@ -16,7 +16,7 @@ export default function Index() {
 
       <h1>Venue</h1>
       <p>content</p>
-
+ 
       {Array(2).map((i) => (
         <CrewCard />
       ))}
