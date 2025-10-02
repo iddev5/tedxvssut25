@@ -1,8 +1,6 @@
+"use client";
 
-
-'use client';
-
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 interface IFormData {
   email: string;
@@ -17,23 +15,23 @@ interface IFormData {
 
 const SurveyForm: React.FC = () => {
   const [formData, setFormData] = useState<IFormData>({
-    email: '',
-    name: '',
-    howDidYouHear: '',
-    isFirstEvent: '',
-    favoriteTalk: '',
+    email: "",
+    name: "",
+    howDidYouHear: "",
+    isFirstEvent: "",
+    favoriteTalk: "",
     rating: 5,
-    feedback: '',
-    joinNextEdition: '',
+    feedback: "",
+    joinNextEdition: "",
   });
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    
+
     // Rating ko string se number mein convert karne ke liye special handling
-    const finalValue = name === 'rating' ? parseInt(value, 10) : value;
+    const finalValue = name === "rating" ? parseInt(value, 10) : value;
 
     setFormData((prevData) => ({
       ...prevData,
@@ -43,37 +41,51 @@ const SurveyForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log('Survey Form Data:', formData);
-    alert('Thank you for your feedback!');
+    console.log("Survey Form Data:", formData);
+    alert("Thank you for your feedback!");
     // Yahan par aap data ko backend API par bhej sakte hain
   };
 
   return (
-    // Section ka background dark red-black gradient jaisa banaya
-    <section className="py-16 bg-gradient-to-b from-black via-red-950 to-black text-white"> 
+    // Section ka background dark
+    <section className="py-16 bg-black text-white">
       <div className="container mx-auto px-6 md:px-12">
-        <h2 className="text-3xl font-bold text-center text-red-500 mb-8">Attendee Survey</h2> {/* Title red */}
+        <h2 className="text-3xl font-bold text-center mb-8 uppercase">
+          <span className="text-white">ATTENDEE</span>{" "}
+          <span className="text-red-500">SURVEY</span>
+        </h2>{" "}
+        {/* Title red */}
         <form
           onSubmit={handleSubmit}
-          className="max-w-2xl mx-auto bg-gray-900 p-8 rounded-lg shadow-lg space-y-6 border border-red-800" // Form background dark, border red
+          className="max-w-2xl mx-auto bg-black p-8 rounded-lg shadow-lg space-y-6 border border-red-800"
         >
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-gray-200 font-semibold mb-2">Name</label>
+            <label
+              htmlFor="name"
+              className="block text-gray-200 font-semibold mb-2"
+            >
+              Name
+            </label>
             <input
               type="text"
               id="name"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-red-500" // Input fields dark, white text
+              className="w-full px-4 py-2 border border-gray-700 rounded-md bg-black text-white focus:outline-none focus:ring-2 focus:ring-red-500"
               required
             />
           </div>
 
           {/* Email Field */}
           <div>
-            <label htmlFor="email" className="block text-gray-200 font-semibold mb-2">Email Address</label>
+            <label
+              htmlFor="email"
+              className="block text-gray-200 font-semibold mb-2"
+            >
+              Email Address
+            </label>
             <input
               type="email"
               id="email"
@@ -87,7 +99,12 @@ const SurveyForm: React.FC = () => {
 
           {/* How Did You Hear Field */}
           <div>
-            <label htmlFor="howDidYouHear" className="block text-gray-200 font-semibold mb-2">How did you hear about this event?</label>
+            <label
+              htmlFor="howDidYouHear"
+              className="block text-gray-200 font-semibold mb-2"
+            >
+              How did you hear about this event?
+            </label>
             <input
               type="text"
               id="howDidYouHear"
@@ -100,16 +117,42 @@ const SurveyForm: React.FC = () => {
 
           {/* Is this your first TEDx event? */}
           <div className="flex flex-col">
-            <label className="block text-gray-200 font-semibold mb-2">Is this your first TEDx event?</label>
+            <label className="block text-gray-200 font-semibold mb-2">
+              Is this your first TEDx event?
+            </label>
             <div className="flex gap-4">
-              <label><input type="radio" name="isFirstEvent" value="Yes" onChange={handleChange} className="mr-2 accent-red-500"/>Yes</label> {/* Radio buttons red accent */}
-              <label><input type="radio" name="isFirstEvent" value="No" onChange={handleChange} className="mr-2 accent-red-500"/>No</label>
+              <label>
+                <input
+                  type="radio"
+                  name="isFirstEvent"
+                  value="Yes"
+                  onChange={handleChange}
+                  className="mr-2 accent-red-500"
+                />
+                Yes
+              </label>{" "}
+              {/* Radio buttons red accent */}
+              <label>
+                <input
+                  type="radio"
+                  name="isFirstEvent"
+                  value="No"
+                  onChange={handleChange}
+                  className="mr-2 accent-red-500"
+                />
+                No
+              </label>
             </div>
           </div>
 
           {/* Which talk you liked the most? */}
           <div>
-            <label htmlFor="favoriteTalk" className="block text-gray-200 font-semibold mb-2">Which talk you liked the most?</label>
+            <label
+              htmlFor="favoriteTalk"
+              className="block text-gray-200 font-semibold mb-2"
+            >
+              Which talk you liked the most?
+            </label>
             <input
               type="text"
               id="favoriteTalk"
@@ -122,7 +165,12 @@ const SurveyForm: React.FC = () => {
 
           {/* Rate the event */}
           <div>
-            <label htmlFor="rating" className="block text-gray-200 font-semibold mb-2">Rate the event (1=Poor, 10=Excellent)</label>
+            <label
+              htmlFor="rating"
+              className="block text-gray-200 font-semibold mb-2"
+            >
+              Rate the event (1=Poor, 10=Excellent)
+            </label>
             <div className="flex items-center gap-4">
               <span>1</span>
               <input
@@ -136,29 +184,57 @@ const SurveyForm: React.FC = () => {
                 className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-red-600" // Slider background dark, accent red
               />
               <span>10</span>
-              <span className="font-bold text-red-500 w-8 text-center">{formData.rating}</span> {/* Rating value red */}
+              <span className="font-bold text-red-500 w-8 text-center">
+                {formData.rating}
+              </span>{" "}
+              {/* Rating value red */}
             </div>
           </div>
-          
+
           {/* Overall Feedback */}
           <div>
-            <label htmlFor="feedback" className="block text-gray-200 font-semibold mb-2">Overall Feedback</label>
+            <label
+              htmlFor="feedback"
+              className="block text-gray-200 font-semibold mb-2"
+            >
+              Overall Feedback
+            </label>
             <textarea
               id="feedback"
               name="feedback"
               rows={4}
               value={formData.feedback}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-700 rounded-md bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-red-500"
+              className="w-full px-4 py-2 border border-gray-700 rounded-md bg-black text-white focus:outline-none focus:ring-2 focus:ring-red-500 resize-none"
             ></textarea>
           </div>
 
-           {/* Would you like to join us in the next edition? */}
-           <div className="flex flex-col">
-            <label className="block text-gray-200 font-semibold mb-2">Would you like to join us in the next edition of TEDxVSSUT?</label>
+          {/* Would you like to join us in the next edition? */}
+          <div className="flex flex-col">
+            <label className="block text-gray-200 font-semibold mb-2">
+              Would you like to join us in the next edition of TEDxVSSUT?
+            </label>
             <div className="flex gap-4">
-              <label><input type="radio" name="joinNextEdition" value="Yes" onChange={handleChange} className="mr-2 accent-red-500"/>Yes</label>
-              <label><input type="radio" name="joinNextEdition" value="No" onChange={handleChange} className="mr-2 accent-red-500"/>No</label>
+              <label>
+                <input
+                  type="radio"
+                  name="joinNextEdition"
+                  value="Yes"
+                  onChange={handleChange}
+                  className="mr-2 accent-red-500"
+                />
+                Yes
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  name="joinNextEdition"
+                  value="No"
+                  onChange={handleChange}
+                  className="mr-2 accent-red-500"
+                />
+                No
+              </label>
             </div>
           </div>
 
