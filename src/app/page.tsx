@@ -1,4 +1,4 @@
-import { CrewCard } from "@/components/CrewCard"; // Kept your version
+import CrewCard from "@/components/CrewCard";
 import Hero from "@/components/Hero";
 import SpeakerHome from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
