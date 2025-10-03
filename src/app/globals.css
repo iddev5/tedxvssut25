@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
 .custom-scrollbar::-webkit-scrollbar {
   height: 20px; 
 }
@@ -74,6 +75,8 @@
 
 body {
     font-family: 'Helvetica Neue', 'Arial', 'sans-serif';
+}
+
     color: white;
     overflow-x: hidden;
 }
@@ -151,6 +154,8 @@ body {
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.145 0 0);
 }
 
 .dark {
