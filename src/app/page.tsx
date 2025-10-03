@@ -8,6 +8,7 @@ import Hero from "@/components/Hero";
 import SpeakerHome from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
 import PastEvents from "./past-events/page";
+import InfoSection from "@/components/InfoSection";
 
 export default function Index() {
   return (
@@ -16,6 +17,9 @@ export default function Index() {
       <h1>TEDxVSSUT</h1>
       <h1>What is ted x</h1>
       <p>reply</p>
+  return (<>
+    <Hero />
+    <InfoSection />
 
       <SpeakerHome />
       <h1>Venue</h1>

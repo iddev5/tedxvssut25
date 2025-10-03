@@ -37,7 +37,7 @@ const Hero = () => {
     <div className="absolute w-screen md:w-288 h-32 md:h-96 top-[60%] -translate-y-[50%] left-[50%] -translate-x-[50%] bg-black rounded-full blur-2xl md:blur-3xl"></div>
     <div className="absolute hidden md:block inset-0 bg-[radial-gradient(circle_at_center,rgba(0,0,0,0)_60%,rgba(0,0,0,0.9)_100%)]"></div>
 
-    <a href="/register" className='absolute bottom-[20%] left-[50%] -translate-x-[50%] bg-white hover:bg-gray-200 hover:scale-110 transition-all text-black text-medium text-lg p-3 px-7 rounded-md z-[100]'>Register Now</a>
+    <a href="/register" className='absolute bottom-[20%] left-[50%] -translate-x-[50%] bg-white hover:bg-gray-200 hover:scale-110 transition-all text-black text-medium text-lg p-3 px-7 rounded-md z-[70]'>Register Now</a>
   </div>
 }
 
