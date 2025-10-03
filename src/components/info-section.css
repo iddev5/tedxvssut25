@@ -1,0 +1,87 @@
+.info-section-container {
+  /* Using approximate dimensions and styling from the image */
+  width: 100vw;
+  margin: 0 auto;
+  padding: 80px 15vw; /* Vertical and horizontal padding */
+  background-color: #121212; /* Or your page's dark background color */
+  font-family: 'Lato', sans-serif;
+  box-sizing: border-box;
+}
+
+.info-grid {
+  display: grid;
+  /* Creates three equal-width columns for the cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px; /* Adjust the space between cards */
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column; /* Stacks title, paragraph, and button vertically */
+  text-align: left;
+}
+
+.info-card h2 {
+  color: #E62B1E; /* TED Red */
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.info-card p {
+  color: #9e9d9d; /* Light gray text */
+  font-size: 16px;
+  line-height: 1.7; /* Improves readability */
+  margin-bottom: 30px;
+  font-weight: 200;
+  /* This makes the paragraph take up available space, pushing the button to the bottom */
+  flex-grow: 1; 
+}
+
+/* Special text styling classes from the JSX */
+.highlight {
+  color: white;
+  font-weight: bold;
+}
+
+.italic-note {
+  font-style: italic;
+  color: #a0a0a0; /* A slightly dimmer gray for less emphasis */
+}
+
+/* Ghost button style */
+.info-btn {
+  display: inline-block;
+  background-color: transparent;
+  color: #dcdcdc;
+  border: 1px solid #dcdcdc;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Aligns button to the start of the card, useful in flexbox */
+  align-self: flex-start; 
+}
+
+.info-btn:hover {
+  background-color: #dcdcdc;
+  color: #121212;
+}
+
+
+/* --- Responsive Design for smaller screens --- */
+@media (max-width: 992px) {
+  .info-grid {
+    /* On medium screens and below, switch to a single column layout */
+    grid-template-columns: 1fr;
+    gap: 80px; /* Increase the gap for better vertical spacing */
+  }
+
+  .info-section-container {
+    padding: 60px 30px;
+  }
+}
