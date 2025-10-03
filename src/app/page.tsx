@@ -1,4 +1,9 @@
+
 import CrewCard from "@/components/CrewCard";
+
+import CrewSection from "@/components/CrewSection";
+
+
 import Hero from "@/components/Hero";
 import SpeakerHome from "@/components/SpeakerHome";
 import { SponsorUs } from "@/components/SponsorUs";
@@ -13,13 +18,15 @@ export default function Index() {
       <p>reply</p>
 
       <SpeakerHome />
-
       <h1>Venue</h1>
       <p>content</p>
  
       {Array(2).map((i) => (
         <CrewCard />
       ))}
+
+    <CrewSection />
+
 
       <SponsorUs />
 
