@@ -265,4 +265,4 @@ const CrewSection = () => {
   )
 }
 
-export default CrewSection
+export default CrewSection;

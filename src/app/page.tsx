@@ -1,3 +1,4 @@
+import { CrewCard } from "@/components/CrewSection";
 import CrewSection from "@/components/CrewSection";
 
 import Hero from "@/components/Hero";
@@ -6,12 +7,14 @@ import { SponsorUs } from "@/components/SponsorUs";
 import PastEvents from "./past-events/page";
 import InfoSection from "@/components/InfoSection";
 
+
 export default function Index() {
-  return (<>
+  return (
+    <>
     <Hero />
     <InfoSection />
 
-    <SpeakerHome/>
+    <SpeakerHome />
 
     <h1>Venue</h1>
     <p>content</p>
@@ -22,5 +25,6 @@ export default function Index() {
 
     <h1>FAQ</h1>
     <p>faqs</p>
-  </>)
+  </>
+  )
 }

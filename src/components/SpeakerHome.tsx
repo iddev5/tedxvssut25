@@ -251,4 +251,4 @@ const SpeakersSection = () => {
   )
 }
 
-export default SpeakersSection
+export default SpeakersSection;
