@@ -52,7 +52,7 @@ const Loader = () => {
 
   return (
     <motion.div
-      className="fixed inset-0 z-[6] flex"
+      className="fixed inset-0 z-[600] flex"
       variants={containerVariants}
       initial="hidden"
       animate={controls}
