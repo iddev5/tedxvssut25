@@ -11,6 +11,9 @@ const Loader = () => {
   useEffect(() => {
     const runSequence = async () => {
       await controls.start('visible');
+
+      window.scrollTo(0, 0);
+      
       await controls.start('down');
       await controls.start('fadeOut');
     };
