@@ -9,7 +9,7 @@ import InfoSection from "@/components/InfoSection";
 export default function Index() {
   return (<>
     <Hero />
-    {/* <Loader /> */}
+    <Loader />
     <InfoSection />
 
     <SpeakerHome/>
