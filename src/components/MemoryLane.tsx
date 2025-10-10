@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { EffectCoverflow } from "swiper/modules";
+import { EffectCoverflow, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 
@@ -31,27 +31,35 @@ const MemoryLane: React.FC = () => {
       {/* Swiper Slider */}
       <div className="mt-12 max-w-5xl mx-auto px-4">
         <Swiper
-          modules={[EffectCoverflow]}
-          effect="coverflow"
-          grabCursor={true}
-          centeredSlides={true}
-          slidesPerView={3}
-          spaceBetween={-60} // closer slides
-          coverflowEffect={{
+        modules={[EffectCoverflow, Autoplay]}
+        effect="coverflow"
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        spaceBetween={-60}
+        speed={1200}
+        autoplay={{
+            delay: 500,
+            disableOnInteraction: false,
+        }}
+        coverflowEffect={{
             rotate: 0,
             stretch: 0,
             depth: 100,
             modifier: 1,
             slideShadows: false,
-          }}
-          pagination={false} // no dots
-          navigation={false} // no arrows
+        }}
+        pagination={false}
+        navigation={false}
         >
           {images.map((src, index) => (
             <SwiperSlide key={index}>
               {({ isActive }) => (
-                <div className="relative w-60 h-80 mx-auto rounded-lg overflow-hidden shadow-lg transition-all duration-300">
-                  {/* Image with rounded edges */}
+                <div
+                  className={`relative w-60 h-80 mx-auto rounded-lg overflow-hidden shadow-lg transition-all duration-300 ${
+                    isActive ? "border border-white" : ""
+                  }`}
+                >
                   <img
                     src={src}
                     alt={`Highlight ${index + 1}`}
@@ -59,8 +67,6 @@ const MemoryLane: React.FC = () => {
                       isActive ? "scale-110" : "scale-90"
                     }`}
                   />
-
-                  {/* Gradient overlay on non-active slides */}
                   {!isActive && (
                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70 rounded-lg"></div>
                   )}
