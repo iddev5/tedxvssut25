@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
           {/* Column 1: TEDxVSSUT Info */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold text-white">
-              <span className="text-[#E62B1E]"> TEDx</span>VSSUT
+              <span className="text-[#E62B1E]">TEDx</span>VSSUT
             </h3>
             <p className="text-sm leading-relaxed">
               TEDxVSSUT is an independently organized TED event aimed at spreading ideas worth sharing,
