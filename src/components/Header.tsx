@@ -28,8 +28,6 @@ const Header = () => {
                     { name: 'Home', href: '/' },
                     { name: 'About', href: '/about' },
                     { name: 'Sponsors', href: '/sponsors' },
-                    { name: 'Crew', href: '/crew' },
-                    { name: 'Past Events', href: '/past-events' } 
                 ].map(el => 
                     <li key={el.name}>
                         <Link 

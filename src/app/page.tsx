@@ -13,8 +13,6 @@ export default function Index() {
     <Hero />
     <InfoSection />
 
-    <SpeakerHome />
-    
     <Venue />
 
     <CrewSection />
