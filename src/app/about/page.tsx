@@ -36,10 +36,6 @@ export default function AboutPage() {
                                 TEDx events are independently organized under a license from TED, designed to bring the spirit of TED to local communities. 'x' signifies an independently organized event, driven by passionate volunteers who curate speakers, ideas, and experiences tailored to their audience. TEDx events empower communities to share ideas, foster dialogue, and spark connections.
                             </p>
                         </div>
-
-                        <p className="text-lg font-light text-gray-300 leading-relaxed mb-6">
-                            (Placeholder Text: This will be replaced with the final script for the second paragraph.)
-                        </p>
                     </section>
 
                 </div>

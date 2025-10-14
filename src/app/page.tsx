@@ -1,4 +1,3 @@
-import { CrewCard } from "@/components/CrewSection";
 import CrewSection from "@/components/CrewSection";
 
 import Hero from "@/components/Hero";
