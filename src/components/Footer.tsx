@@ -32,6 +32,7 @@ const Footer: React.FC = () => {
               <li><Link href="/sponsors" className="hover:text-white hover:pl-2 transition-all duration-300">Sponsors</Link></li>
               <li><Link href="/#venue" className="hover:text-white hover:pl-2 transition-all duration-300">Event Venue</Link></li>
               <li><Link href="/get-tickets" className="hover:text-white hover:pl-2 transition-all duration-300">Book Tickets</Link></li>
+              <li><Link href="/privacy-policy" className="hover:text-white hover:pl-2 transition-all duration-300">Privacy Policy</Link></li>
             </ul>
           </div>
 
