@@ -9,7 +9,7 @@ const InfoSection = () => {
                 <p>
                     TED is a global platform dedicated to spreading ideas through short, powerful talks. Founded in 1984, TED started as a conference on Technology, Entertainment, and Design, but its scope now includes science, business, arts, and much more. With its slogan <span className="highlight">'Ideas&nbsp;Worth&nbsp;Spreading,'</span> TED hosts annual conferences featuring world-renowned speakers who captivate audiences with innovative ideas and thought-provoking perspectives.
                </p>
-                <a href="#ted" className="info-btn">Explore TED Talks</a>
+                <a href="https://www.ted.com/talks" className="info-btn">Explore TED Talks</a>
             </div>
 
             <div className="info-card">
@@ -26,7 +26,7 @@ const InfoSection = () => {
                     <br></br>
                     Be a part of this transformative experience!
                 </p>
-                <a href="#join" className="info-btn">Join Us</a>
+                <a href="/#venue" className="info-btn">Join Us</a>
             </div>
         </div>
     </section>
