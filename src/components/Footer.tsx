@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
+import { FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } from 'react-icons/fa';
 import Link from 'next/link';
 import config from '@/app/config';
 
@@ -49,16 +49,16 @@ const Footer: React.FC = () => {
               <p><strong className="text-white">Email:</strong> {config.officialEmail}</p>
             </div>
             <div className="flex items-center gap-4 pt-2">
-              <a href="https://facebook.com" aria-label="Facebook" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
-                <FaFacebookF />
+              <a href={config.officialTwitter} aria-label="Facebook" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
+                <FaTwitter />
               </a>
-              <a href="https://instagram.com" aria-label="Instagram" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
+              <a href={config.officialInsta} aria-label="Instagram" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
                 <FaInstagram />
               </a>
-              <a href="https://linkedin.com" aria-label="LinkedIn" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
+              <a href={config.officialLinkedIn} aria-label="LinkedIn" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
                 <FaLinkedinIn />
               </a>
-              <a href="https://youtube.com" aria-label="YouTube" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
+              <a href={config.officialYoutube} aria-label="YouTube" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">
                 <FaYoutube />
               </a>
               <a href="https://ted.com" aria-label="TED" className="h-10 w-10 flex items-center justify-center rounded-full border border-gray-700 font-bold text-sm tracking-wider transition-colors duration-300 hover:bg-[#E62B1E] hover:text-white hover:border-[#E62B1E]">

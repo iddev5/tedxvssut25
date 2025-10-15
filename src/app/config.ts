@@ -1,6 +1,10 @@
 const config = {
     organizerContact: '+91 70082 78591',
-    officialEmail: 'tedxvssut.info@gmail.com',
+    officialEmail: 'tedxvssut@gmail.com',
+    officialInsta: 'https://www.instagram.com/tedxvssut?igsh=MWZ0Y2NpODFjMnM3eg==',
+    officialLinkedIn: 'https://www.linkedin.com/company/tedxvssut/',
+    officialTwitter: 'https://x.com/tedxvssut?t=zzsy1--yhd_JWRsYoqxdpg&s=09',
+    officialYoutube: 'https://youtube.com/@tedxvssut3083?si=h9ugESB8Bklpz9rw',
 
     crew: {
         organizers: [
