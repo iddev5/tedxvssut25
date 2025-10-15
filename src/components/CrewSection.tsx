@@ -177,13 +177,6 @@ const CrewSection = () => {
             <CrewCard key={i} member={crew} />
           ))}
         </div>
-        <Link
-          href="/crew"
-          className="inline-block px-6 py-2 mt-6 rounded-md bg-red-600 text-white font-semibold tracking-wide
-             hover:bg-red-700 hover:scale-105 hover:shadow-lg transition-all duration-300"
-        >
-          View All Crew Members
-        </Link>
       </div>
     </section>
   )
