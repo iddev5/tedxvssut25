@@ -1,5 +1,6 @@
 'use client'
 
+import config from '@/app/config'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import {
@@ -29,83 +30,6 @@ interface CrewCardProps {
   member: crewMembers
 }
 
-const crewMembers: crewMembers[] = [
-  {
-    id: 1,
-    name: 'Arab Mehtab',
-    role: 'Organising Team',
-    imageUrl: '/crew_image/crew.jpg',
-    quote: '',
-    social: {
-      facebook: 'https://facebook.com/arabmehtab',
-      instagram: 'https://instagram.com/arabmehtab',
-      twitter: 'https://x.com/arabmehtab',
-      linkedin: 'https://linkedin.com/in/arabmehtab',
-      github: '', 
-    },
-  },
-  {
-    id: 2,
-    name: 'Arab Mehtab',
-    role: 'Organising Team',
-    imageUrl: '/crew_image/crew.jpg',
-    quote:
-      '“Organizing TEDxVSSUT was an inspiring journey! From coordinating speakers to perfecting details, it was a rewarding experience of teamwork, creativity and bringing impactful ideas to life.”',
-    social: {
-      facebook: 'https://facebook.com/arabmehtab2',
-      instagram: 'https://instagram.com/arabmehtab2',
-      twitter: '',
-      linkedin: 'https://linkedin.com/in/arabmehtab2',
-      github: '',
-    },
-  },
-  {
-    id: 3,
-    name: 'Jane Doe',
-    role: 'Lead Designer',
-    imageUrl: '/crew_image/crew.jpg',
-    quote:
-      '“Crafting the visual identity for this event was a dream. Seeing our brand come to life on stage and connect with the audience was incredibly fulfilling.”',
-    social: {
-      facebook: '',
-      instagram: 'https://instagram.com/janedoe',
-      twitter: 'https://x.com/janedoe',
-      linkedin: 'https://linkedin.com/in/janedoe',
-      github: '',
-    },
-  },
-  {
-    id: 4,
-    name: 'John Smith',
-    role: 'Technical Head',
-    imageUrl: '/crew_image/crew.jpg',
-    quote:
-      "“Ensuring a seamless technical production is my passion. The energy of a live TEDx event is unmatched, and I'm proud of our flawless execution.”",
-    social: {
-      facebook: '',
-      instagram: '',
-      twitter: 'https://x.com/johnsmith',
-      linkedin: 'https://linkedin.com/in/johnsmith',
-      github: 'https://github.com/johnsmith',
-    },
-  },
-  {
-    id: 5,
-    name: 'Emily White',
-    role: 'Curation Lead',
-    imageUrl: '/crew_image/crew.jpg',
-    quote:
-      '“Finding and guiding our speakers was an honor. Each one brought a unique and powerful idea to the stage, making our event truly memorable.”',
-    social: {
-      facebook: 'https://facebook.com/emilywhite',
-      instagram: 'https://instagram.com/emilywhite',
-      twitter: '',
-      linkedin: 'https://linkedin.com/in/emilywhite',
-      github: '',
-    },
-  },
-]
-
 export const CrewCard: React.FC<CrewCardProps> = ({ member }) =>  {
    return (
      <motion.div
@@ -130,7 +54,7 @@ export const CrewCard: React.FC<CrewCardProps> = ({ member }) =>  {
        <img
          src={member.imageUrl}
          alt={member.name}
-         className="w-full h-full object-cover grayscale"
+         className="w-full h-full object-cover hover:grayscale"
        />
 
        <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-500 ease-in-out  bg-black/80 flex flex-col items-center justify-center p-4 space-y-3">
@@ -248,8 +172,8 @@ const CrewSection = () => {
           are making TEDxVSSUT 2025 success.
         </p>
 
-        <div className="w-[80%] max-w-[1400px] mx-auto px-4 sm:px-6 md:px-30 flex overflow-x-auto mt-10 sm:mt-16 mb-6 sm:mb-8  relative py-5 overflow-y-hidden custom-scrollbar gap-3 sm:gap-4 md:gap-6 lg:gap-8 ">
-          {crewMembers.map((crew, i) => (
+        <div className="w-[80%] max-w-[1400px] mx-auto px-4 sm:px-6 md:px-30 flex justify-center overflow-x-auto mt-10 sm:mt-16 mb-6 sm:mb-8  relative py-5 overflow-y-hidden custom-scrollbar gap-3 sm:gap-4 md:gap-6 lg:gap-8 ">
+          {config.crew.organizers.map((crew, i) => (
             <CrewCard key={i} member={crew} />
           ))}
         </div>
