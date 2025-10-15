@@ -1,5 +1,6 @@
 import React from 'react';
 import { Calendar, Clock, MapPin, Check } from 'lucide-react';
+import Link from 'next/link';
 
 const EventVenue = () => {
 
@@ -39,7 +40,7 @@ const EventVenue = () => {
                 <div className="flex items-start gap-4 p-4 bg-white/5 rounded-lg backdrop-blur-sm">
                   <Calendar className="w-6 h-6 text-red-600 flex-shrink-0 mt-1" />
                   <div>
-                    <p className="text-2xl font-bold">November 18, 2025</p>
+                    <p className="text-2xl font-bold">November 1, 2025</p>
                   </div>
                 </div>
 
@@ -68,9 +69,9 @@ const EventVenue = () => {
                 Mark your calendars and join us at the E-Learning Centre for a day of innovation
                 and inspiration
               </p>
-              <button className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer">
-                REGISTER NOW
-              </button>
+              <Link href='/get-tickets' className="bg-white text-black px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-600 hover:text-white transition-colors cursor-pointer">
+                Book Tickets
+              </Link>
             </div>
           </div>
 
