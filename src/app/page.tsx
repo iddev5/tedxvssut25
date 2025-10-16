@@ -11,17 +11,19 @@ export default function Index() {
   return (
     <>
     <Hero />
-    <InfoSection />
 
-    <SpeakerHome />
-    
-    <Venue />
+    <div className="relative">
+      <InfoSection />
 
-    <CrewSection />
+      <SpeakerHome />
+      
+      <Venue />
 
-    <Sponsorship />
+      <CrewSection />
 
-    <FAQ />
+      <Sponsorship />
+      <FAQ />
+    </div>
   </>
   )
 }
