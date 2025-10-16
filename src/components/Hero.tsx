@@ -105,7 +105,7 @@ const Hero = () => {
           />
         </motion.div>
         <motion.div
-          className='absolute z-40 left-[50%] -translate-x-[45%] -translate-y-[50%] top-[50%]'
+          className='w-screen flex justify-center absolute z-40 left-[50%] -translate-x-[50%] -translate-y-[50%] top-[50%]'
           style={{ opacity: timerOpacity }}
         >
           <AnimatedTimer />

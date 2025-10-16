@@ -1,105 +1,71 @@
-import './timer.css';
-import { Aldrich } from 'next/font/google'
- 
-const aldrich = Aldrich({
-    subsets: ["latin"],
-    weight: "400"
-})
+"use client";
 
-const AnimatedTimer = () => {
-    return (
-        <div className={`wrapper ${aldrich.className}`}>
-            <div className='time-part-wrapper'>
-                <div className='time-part minutes tens'>
-                <div className='digit-wrapper'>
-                    <span className='digit'>0</span>
-                    <span className='digit'>5</span>
-                    <span className='digit'>4</span>
-                    <span className='digit'>3</span>
-                    <span className='digit'>2</span>
-                    <span className='digit'>1</span>
-                    <span className='digit'>0</span>
-                </div>
-                </div>
-                <div className='time-part minutes ones'>
-                <div className='digit-wrapper'>
-                    <span className='digit'>0</span>
-                    <span className='digit'>9</span>
-                    <span className='digit'>8</span>
-                    <span className='digit'>7</span>
-                    <span className='digit'>6</span>
-                    <span className='digit'>5</span>
-                    <span className='digit'>4</span>
-                    <span className='digit'>3</span>
-                    <span className='digit'>2</span>
-                    <span className='digit'>1</span>
-                    <span className='digit'>0</span>
-                </div>
-                </div>
-            </div>
-            <div className='time-part-wrapper'>
-                <div className='time-part seconds tens'>
-                <div className='digit-wrapper'>
-                    <span className='digit'>0</span>
-                    <span className='digit'>5</span>
-                    <span className='digit'>4</span>
-                    <span className='digit'>3</span>
-                    <span className='digit'>2</span>
-                    <span className='digit'>1</span>
-                    <span className='digit'>0</span>
-                </div>
-                </div>
-                <div className='time-part seconds ones'>
-                <div className='digit-wrapper'>
-                    <span className='digit'>0</span>
-                    <span className='digit'>9</span>
-                    <span className='digit'>8</span>
-                    <span className='digit'>7</span>
-                    <span className='digit'>6</span>
-                    <span className='digit'>5</span>
-                    <span className='digit'>4</span>
-                    <span className='digit'>3</span>
-                    <span className='digit'>2</span>
-                    <span className='digit'>1</span>
-                    <span className='digit'>0</span>
-                </div>
-                </div>
-            </div>
-            {/* <div className='time-part-wrapper'>
-                <div className='time-part hundredths tens'>
-                <div className='digit-wrapper'>
-                    <span className='digit'>0</span>
-                    <span className='digit'>9</span>
-                    <span className='digit'>8</span>
-                    <span className='digit'>7</span>
-                    <span className='digit'>6</span>
-                    <span className='digit'>5</span>
-                    <span className='digit'>4</span>
-                    <span className='digit'>3</span>
-                    <span className='digit'>2</span>
-                    <span className='digit'>1</span>
-                    <span className='digit'>0</span>
-                </div>
-                </div>
-                <div className='time-part hundredths ones'>
-                <div className='digit-wrapper'>
-                    <span className='digit'>0</span>
-                    <span className='digit'>9</span>
-                    <span className='digit'>8</span>
-                    <span className='digit'>7</span>
-                    <span className='digit'>6</span>
-                    <span className='digit'>5</span>
-                    <span className='digit'>4</span>
-                    <span className='digit'>3</span>
-                    <span className='digit'>2</span>
-                    <span className='digit'>1</span>
-                    <span className='digit'>0</span>
-                </div>
-                </div>
-            </div> */}
-            </div>
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import "./Timer.css"; // Import Tailwind and custom styles for Aldrich font
 
-    );
-}
+const targetDate = new Date("2025-11-01T00:00:00");
 
-export default AnimatedTimer;
+const Timer = () => {
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  function calculateTimeLeft() {
+    const now = new Date();
+    const difference = targetDate.getTime() - now.getTime();
+
+    const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((difference / (1000 * 60)) % 60);
+    const seconds = Math.floor((difference / 1000) % 60);
+
+    return { days, hours, minutes, seconds };
+  }
+
+  const renderDigits = (value: number) => {
+    const digits = value.toString().padStart(2, "0").split("");
+
+    return digits.map((digit, index) => (
+      <motion.div
+        key={index}
+        initial={{ y: "100%" }}
+        animate={{ y: "0%" }}
+        exit={{ y: "-100%" }}
+        transition={{ duration: 0.5 }}
+        className="digit"
+      >
+        {digit}
+      </motion.div>
+    ));
+  };
+
+  return (
+    <div className="timer-container font-aldrich text-white text-center">
+      <div className="time-section">
+        <div className="time-value">{renderDigits(timeLeft.days)}</div>
+        <div className="time-label">Days</div>
+      </div>
+      <div className="time-section">
+        <div className="time-value">{renderDigits(timeLeft.hours)}</div>
+        <div className="time-label">Hours</div>
+      </div>
+      <div className="time-section">
+        <div className="time-value">{renderDigits(timeLeft.minutes)}</div>
+        <div className="time-label">Minutes</div>
+      </div>
+      <div className="time-section">
+        <div className="time-value">{renderDigits(timeLeft.seconds)}</div>
+        <div className="time-label">Seconds</div>
+      </div>
+    </div>
+  );
+};
+
+export default Timer;
