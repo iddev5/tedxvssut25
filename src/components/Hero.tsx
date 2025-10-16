@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import React from 'react';
 import { motion, useAnimation, useScroll, useTransform } from 'framer-motion';
+import AnimatedTimer from './Timer';
 
 const AnimatedText = () => {
   const [isFirstText, setIsFirstText] = React.useState(true);
@@ -55,6 +56,7 @@ const Hero = () => {
   const image2Scale = useTransform(scrollY, [0, 300, 600], [1.0, 2.5, 4.0]);
   const imageOpacity = useTransform(scrollY, [0, 300, 400], [1, 1, 0]);
   const imageTop = useTransform(scrollY, [0, 300], ['30%', '50%']);
+  const timerOpacity = useTransform(scrollY, [500, 600], [0.0, 1.0]);
 
   return (
     <div className='relative w-screen h-[200vh]'>
@@ -101,7 +103,12 @@ const Hero = () => {
             alt="X"
             className='scale-100'
           />
-        
+        </motion.div>
+        <motion.div
+          className='absolute z-40 left-[50%] -translate-x-[45%] -translate-y-[50%] top-[50%]'
+          style={{ opacity: timerOpacity }}
+        >
+          <AnimatedTimer />
         </motion.div>
         
         {/* <motion.div

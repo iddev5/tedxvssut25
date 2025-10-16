@@ -2,18 +2,22 @@ import Accordion from "./Accordion"
 
 const faqs = [
     {
+        id: 1,
         title: 'Who should attend TEDxVSSUT?',
         answer: 'Anyone can attend TEDxVSSUT who want to learns something new and be inspired.'
     },
     {
+        id: 2,
         title: 'How can I register for TEDxVSSUT?',
         answer: 'You can register for TEDxVSSUT by visiting our official website and following the registration process. Ensure you provide accurate details to complete your registration successfully.'
     },
     {
+        id: 3,
         title: 'Will TEDxVSSUT be held in person or virtually',
         answer: 'TEDxVSSUT will be held in person mode, but post event, all the recordings will be made available publically through the official TEDx Youtube Channel.'
     },
     {
+        id: 4,
         title: 'What kind of speakers will be at TEDxVSSUT?',
         answer: 'TEDxVSSUT features a wide range of speakers, including successful scientists, entrepreneurs, industry experts, sportsperson, artists and thought leaders. Our speakers come from various sectors, including technology, business and sustainability.'
     },
@@ -30,6 +34,7 @@ const FAQ = () => {
         <div className="w-[80vw] md:w-[60vw] p-4 rounded-lg flex flex-col mb-10">
           {faqs.map(faq => 
             <Accordion
+                key={faq.id}
                 title={faq.title}
                 answer={faq.answer}
             />

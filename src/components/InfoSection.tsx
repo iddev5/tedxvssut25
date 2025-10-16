@@ -1,8 +1,12 @@
 import './info-section.css';
+import AnimatedTimer from './Timer';
 
 const InfoSection = () => {
     return (
     <section className="info-section-container">
+                  <AnimatedTimer />
+        
+
         <div className="info-grid">
             <div className="info-card">
                 <h2>What is TED?</h2>
