@@ -12,7 +12,6 @@ export default function Index() {
     <>
     <Hero />
     <Loader />
-    <InfoSection />
     <div className="relative">
       <InfoSection />
 
