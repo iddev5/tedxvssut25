@@ -1,5 +1,4 @@
 import CrewSection from "@/components/CrewSection";
-
 import Hero from "@/components/Hero";
 import SpeakerHome from "@/components/SpeakerHome";
 import Sponsorship from "@/components/Sponsorship";

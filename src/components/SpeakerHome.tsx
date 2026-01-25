@@ -57,7 +57,7 @@ const speakers = [
     bio: 'Ex-international Kabaddi Player',
     Talklink: ""
   },
-  {
+   {
     id: 6,
     name: 'Chandan Malu',
     title: 'Technology',
@@ -159,7 +159,7 @@ const SpeakersSection = () => {
               >
                 <div className="group perspective order-none min-w-[40%] sm:min-w-[45%] md:min-w-[50%] lg:w-[320px] xl:w-[350px] h-[300px] sm:h-[340px] md:h-[360px] lg:h-[400px] rounded-xl overflow-hidden">
                   <div
-                    className="relative w-full h-full transition-transform  transform-style-preserve-3d group-hover:rotate-y-180 duration-500 ease-out cursor-pointer border-2 border-gray-300 rounded-xl"
+                    className="relative w-full h-full transition-transform preserve-3d group-hover:rotate-y-180 duration-500 ease-out cursor-pointer border-2 border-gray-300 rounded-xl"
                     onMouseEnter={() => setActiveIndex(i)}
                   >
                     {/* FRONT SIDE */}
@@ -173,13 +173,13 @@ const SpeakersSection = () => {
                     </div>
 
                     {/* BACK SIDE */}
-                    <div className="absolute inset-0 rotate-y-180 backface-hidden pointer-events-auto cursor-default text-white rounded-xl">
+                    <div className="absolute inset-0 rotate-y-180 backface-hidden pointer-events-none bg-black cursor-default text-white rounded-xl">
                         <h3 className="text-[25px] mt-8 mb-2 font-bold z-[30]">{speaker.name}</h3>
                         <p className="text-[16px] text-gray-100 font-serif z-[30]">{speaker.title}</p>
                         <p className="text-[15px]  mt-4 px-4 text-center opacity-90 z-[30]">
                           {speaker.bio}
                         </p>
-                        {speaker.Talklink?(<><h5 className="mt-[45px] text-center text-white font-semibold text-[20px]"> Watch TEDTalk </h5><div className="mt-[10px] w-full h-fit flex justify-center pointer-events-auto"><a href={speaker.Talklink} target="_blank" className="p-2 bg-transparent text-white border-3 border-white rounded-full"><LinkIcon size={19} strokeWidth={4}/></a></div></>):""}
+                        {speaker.Talklink?(<><h5 className="mt-[45px] text-center text-white font-semibold text-[20px] cursor-default"> Watch TEDTalk </h5><div className="mt-[10px] w-full h-fit flex justify-center pointer-events-auto z-[30]"><a title={speaker.title} href={speaker.Talklink} target="_blank" className="p-2 bg-transparent text-white border-3 border-white rounded-full cursor-pointer"><LinkIcon size={19} strokeWidth={4}/></a></div></>):""}
                         <div className="absolute bottom-0 right-0 w-full h-full flex flex-row justify-end items-end z-[10]">
                           <div className="bg-radial-[at_0%_0%] from-red-600 to-red-700 rounded-full p-[125px] blur-[150px]"></div>
                         </div>

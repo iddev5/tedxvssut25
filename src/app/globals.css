@@ -49,28 +49,18 @@
   background-color: rgb(224, 10, 10) !important;
 }
 
+
 .perspective {
-  -webkit-perspective:1000px;
   perspective: 1000px;
 }
 
-.rotate{
-  animation:rotation 0.5s linear forwards;
-}
-.transform-style-preserve-3d {
-  -webkit-transform-style:preserve-3d;
+.preserve-3d {
   transform-style: preserve-3d;
 }
 
-@keyframes rotation{
-  to{
-    transform:rotateY(180deg);
-  }
-}
-
 .backface-hidden {
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
